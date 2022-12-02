@@ -67,15 +67,27 @@ function draw() {
     else if (diamondsG.isTouching(boy)) {
       diamondsG.destroyEach();
             //aumente a treasureCollection para 100
-   
+            treasureCollection=treasureCollection+100
     }
     else if(jwelleryG.isTouching(boy)) {
       jwelleryG.destroyEach();
             //aumente a treasureCollection para 150
-
+            treasureCollection=treasureCollection+150
           }
     else{
       if(swordGroup.isTouching(boy)) {
+        gameState = END
+        swordGroup.destroyEach();
+        cashG.destroyEach();
+        diamondsG.destroyEach();
+        jwelleryG.destroyEach();
+
+        swordGroup.setVelocityEach(0);
+        cashG.setVelocityEach(0);
+        diamondsG.setVelocityEach(0);
+        jwelleryG.setVelocityEach(0);
+
+
 //Mude o gameState (estado do jogo) para End
 //destrua todos os grupos
 // defina setvelocityEach como 0 para todos os grupos
